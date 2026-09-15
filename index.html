@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psalm Jakosalem — Graphic Designer &amp; Illustrator</title>
+<meta name="description" content="Portfolio of Psalm Jakosalem, a graphic designer and illustrator based in Ozamiz City, Philippines. Poster design, product mockups, 3D rendering, apparel graphics, and video edits.">
+<meta name="theme-color" content="#141414">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%23111111%22/><text x=%2250%22 y=%2268%22 font-family=%22Arial,Helvetica,sans-serif%22 font-size=%2258%22 font-weight=%22900%22 fill=%22%23FFA200%22 text-anchor=%22middle%22>P</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#121212;
+    --bg-alt:#1a1a1a;
+    --panel:#1e1e1e;
+    --orange:#ffa200;
+    --orange-dim:#cc8100;
+    --text:#f2f2ee;
+    --muted:#a7a7a1;
+    --border:#2c2c2c;
+    --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  h1,h2,h3,.display{font-family:"Anton",Impact,"Arial Black",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.01em;line-height:0.95;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(18,18,18,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .logo{font-family:"Anton",sans-serif;font-size:1.3rem;letter-spacing:0.03em;}
+  .logo span{color:var(--orange);}
+  nav ul{list-style:none;display:flex;gap:32px;}
+  nav a.navlink{font-size:0.92rem;font-weight:600;text-decoration:none;color:var(--muted);transition:color .2s;}
+  nav a.navlink:hover{color:var(--text);}
+  .nav-cta{
+    display:inline-block;background:var(--orange);color:#141414;font-weight:700;
+    padding:10px 20px;border-radius:4px;text-decoration:none;font-size:0.88rem;
+    transition:background .2s, transform .2s;
+  }
+  .nav-cta:hover{background:#ffb733;transform:translateY(-1px);}
+  .menu-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.6rem;cursor:pointer;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:120px 0 100px;
+    position:relative;
+    border-bottom:1px solid var(--border);
+    background:
+      radial-gradient(600px circle at 85% 10%, rgba(255,162,0,0.12), transparent 60%),
+      var(--bg);
+  }
+  .eyebrow{
+    color:var(--orange);font-weight:700;letter-spacing:0.18em;font-size:0.82rem;
+    text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--orange);display:inline-block;}
+  .hero h1{font-size:clamp(2.6rem,7vw,5.2rem);margin-bottom:10px;}
+  .hero h1 .accent{color:var(--orange);display:block;}
+  .hero p.lead{max-width:560px;color:var(--muted);font-size:1.08rem;margin:26px 0 36px;}
+  .btn-row{display:flex;flex-wrap:wrap;gap:16px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;border-radius:4px;font-weight:700;text-decoration:none;font-size:0.95rem;
+    transition:transform .2s, background .2s, border-color .2s;
+  }
+  .btn-primary{background:var(--orange);color:#141414;}
+  .btn-primary:hover{background:#ffb733;transform:translateY(-2px);}
+  .btn-outline{border:1px solid var(--border);color:var(--text);}
+  .btn-outline:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px);}
+
+  /* ---------- Section shell ---------- */
+  section{padding:96px 0;border-bottom:1px solid var(--border);}
+  .section-head{margin-bottom:48px;}
+  .section-tag{color:var(--orange);font-weight:700;letter-spacing:0.18em;font-size:0.8rem;text-transform:uppercase;margin-bottom:14px;}
+  .section-head h2{font-size:clamp(2rem,4.4vw,3rem);}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start;}
+  .about-card{
+    background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:32px;
+  }
+  .about-card .name{font-family:"Anton",sans-serif;font-size:1.6rem;color:var(--orange);margin-bottom:6px;}
+  .about-card .role{color:var(--muted);font-size:0.95rem;margin-bottom:24px;}
+  .meta-line{display:flex;gap:10px;font-size:0.9rem;padding:10px 0;border-top:1px solid var(--border);}
+  .meta-line:first-of-type{border-top:none;}
+  .meta-line b{color:var(--muted);min-width:88px;font-weight:600;}
+  .about-text p{color:#d6d6d0;font-size:1.05rem;margin-bottom:20px;max-width:60ch;}
+  .about-text p:last-child{margin-bottom:0;}
+
+  /* ---------- Skills ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .skill-block h3{font-family:"Inter",sans-serif;text-transform:uppercase;font-size:0.85rem;letter-spacing:0.1em;color:var(--orange);font-weight:800;margin-bottom:18px;}
+  .tag-list{display:flex;flex-wrap:wrap;gap:10px;}
+  .tag{
+    background:var(--panel);border:1px solid var(--border);color:var(--text);
+    padding:9px 14px;border-radius:999px;font-size:0.88rem;font-weight:500;
+  }
+
+  /* ---------- Work ---------- */
+  .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+  .work-card{
+    background:var(--panel);border:1px solid var(--border);border-radius:10px;
+    padding:28px;transition:transform .2s, border-color .2s;
+  }
+  .work-card:hover{transform:translateY(-4px);border-color:var(--orange-dim);}
+  .work-icon{
+    width:46px;height:46px;border-radius:8px;background:rgba(255,162,0,0.12);
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--orange);
+  }
+  .work-card h3{font-family:"Inter",sans-serif;font-size:1.08rem;font-weight:700;margin-bottom:10px;text-transform:none;}
+  .work-card p{color:var(--muted);font-size:0.92rem;}
+
+  /* ---------- Experience ---------- */
+  .exp-row{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:20px;padding:22px 0;border-top:1px solid var(--border);}
+  .exp-row:first-of-type{border-top:none;}
+  .exp-role{font-weight:700;font-size:1.1rem;}
+  .exp-sub{color:var(--muted);font-size:0.92rem;margin-top:4px;}
+  .exp-badge{color:var(--orange);font-weight:700;font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;}
+
+  /* ---------- Contact ---------- */
+  .contact-section{border-bottom:none;text-align:center;}
+  .contact-section h2{font-size:clamp(2.2rem,6vw,4rem);margin-bottom:24px;}
+  .contact-section .lead{color:var(--muted);max-width:520px;margin:0 auto 40px;}
+  .contact-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .contact-link{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--panel);border:1px solid var(--border);
+    padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.95rem;
+    transition:border-color .2s, color .2s, transform .2s;
+  }
+  .contact-link:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px);}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:0.85rem;}
+  footer a{color:var(--orange);text-decoration:none;}
+
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr;gap:40px;}
+    .skills-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    .skills-grid{grid-template-columns:1fr;}
+    nav ul{
+      position:fixed;top:72px;left:0;right:0;background:var(--bg-alt);
+      flex-direction:column;padding:20px 24px;gap:18px;border-bottom:1px solid var(--border);
+      transform:translateY(-140%);transition:transform .25s ease;
+    }
+    nav ul.open{transform:translateY(0);}
+    .menu-toggle{display:block;}
+    .nav-cta{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">PSALM<span>.</span>JAKOSALEM</a>
+    <ul id="navlinks">
+      <li><a class="navlink" href="#about">About</a></li>
+      <li><a class="navlink" href="#skills">Skills</a></li>
+      <li><a class="navlink" href="#work">Work</a></li>
+      <li><a class="navlink" href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="mailto:psalmjakosalem2002@gmail.com">Hire Me</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Graphic Designer &amp; Illustrator</p>
+      <h1>Psalm Jakosalem<span class="accent">Creative Portfolio</span></h1>
+      <p class="lead">Also known as <strong>Sam</strong> — a graphic designer and illustrator based in Ozamiz City, Philippines, working across poster design, product mockups, 3D rendering, apparel graphics, and video edits.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#work">View My Work</a>
+        <a class="btn btn-outline" href="#contact">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="about-card">
+        <div class="name">Psalm "Sam" Jakosalem</div>
+        <div class="role">Graphic Designer &amp; Illustrator</div>
+        <div class="meta-line"><b>Location</b><span>Ozamiz City, Philippines</span></div>
+        <div class="meta-line"><b>Role</b><span>Freelance Graphic Designer</span></div>
+        <div class="meta-line"><b>Email</b><span>psalmjakosalem2002@gmail.com</span></div>
+      </div>
+      <div class="about-text">
+        <div class="section-tag">About Me</div>
+        <p>My name is Psalm Jakosalem, you may call me Sam for easier pronunciation. I am a Graphic Designer and Illustrator from Ozamiz City, Philippines.</p>
+        <p>Looking for a new start to improve my skills and myself with knowledge and ability. I'm prepared to do my best — I believe I could portray my passion through my work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">Toolkit</div>
+        <h2>Skills &amp; Software</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h3>Skills</h3>
+          <div class="tag-list">
+            <span class="tag">Poster Design</span>
+            <span class="tag">Mockups</span>
+            <span class="tag">Graphic Design</span>
+            <span class="tag">Product Design</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h3>Software</h3>
+          <div class="tag-list">
+            <span class="tag">Adobe Illustrator</span>
+            <span class="tag">Adobe Photoshop</span>
+            <span class="tag">Canva</span>
+            <span class="tag">Kittl</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h3>Interests</h3>
+          <div class="tag-list">
+            <span class="tag">Art</span>
+            <span class="tag">Design</span>
+            <span class="tag">Illustration</span>
+            <span class="tag">Music</span>
+            <span class="tag">Working Out</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">Portfolio</div>
+        <h2>What I Do</h2>
+      </div>
+      <div class="work-grid">
+
+        <div class="work-card">
+          <div class="work-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 5-6 4 5"/></svg>
+          </div>
+          <h3>Product Poster Design</h3>
+          <p>Bold, brand-ready poster concepts built to sell a product and stop the scroll.</p>
+        </div>
+
+        <div class="work-card">
+          <div class="work-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
+          </div>
+          <h3>Poster Designs</h3>
+          <p>Typography-driven poster art blending imagery, mood, and message.</p>
+        </div>
+
+        <div class="work-card">
+          <div class="work-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>
+          </div>
+          <h3>3D Rendering</h3>
+          <p>Product visualization and 3D mockups, from wireframe to finished render.</p>
+        </div>
+
+        <div class="work-card">
+          <div class="work-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4l4 3-3 4h-2v9H9v-9H7l-3-4 4-3 4 2 4-2z"/></svg>
+          </div>
+          <h3>T-Shirt Design</h3>
+          <p>Custom apparel graphics for teams, brands, orgs, and events.</p>
+        </div>
+
+        <div class="work-card">
+          <div class="work-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 9l5-3v12l-5-3"/></svg>
+          </div>
+          <h3>Video Edits</h3>
+          <p>Short-form video edits and motion content for social and campaigns.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">Background</div>
+        <h2>Experience</h2>
+      </div>
+      <div class="exp-row">
+        <div>
+          <div class="exp-role">Graphic Designer</div>
+          <div class="exp-sub">Freelance</div>
+        </div>
+        <div class="exp-badge">Freelance</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="wrap">
+      <div class="section-tag" style="text-align:center;">Get In Touch</div>
+      <h2>Let's work together and<br>create something great!</h2>
+      <p class="lead">Have a project in mind? I'd love to hear about it.</p>
+      <div class="contact-row">
+        <a class="contact-link" href="mailto:psalmjakosalem2002@gmail.com">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+          psalmjakosalem2002@gmail.com
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/psalm-jakosalem-191517357" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13c0-2 2-4 4-4s4 2 4 4v8"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="year"></span> Psalm Jakosalem. Built with care in Ozamiz City, Philippines.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navlinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+</body>
+</html>
